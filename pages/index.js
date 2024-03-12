@@ -73,8 +73,7 @@ const Home = () => {
               <img src={story.content.product} alt={story.name} />
               <h2>{story.name}</h2>
               <p>${story.content.price}</p>
-              <button onClick={() => addToCart(story)} className="add-to-cart">Add to Cart</button>
-            
+              <button onClick={() => addToCart(story)} className="add-to-cart">Add to Cart</button>            
             </div>
           ))}
         </div>
