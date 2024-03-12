@@ -9,6 +9,8 @@ function MyApp({ Component, pageProps }) {
     <>
       <Navbar />
       <Component {...pageProps} />
+      <CookiesBanner />
+      <Footer />
     </>
   );
 }
