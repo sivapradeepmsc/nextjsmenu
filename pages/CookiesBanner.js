@@ -36,9 +36,7 @@ function CookiesBanner() {
           </div>
         </div>
       )}
-      <div className={styles.content}>
-        <p>This is the content of your website.</p>
-      </div>
+ 
     </div>
   );
 }

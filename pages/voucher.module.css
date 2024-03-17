@@ -6,6 +6,9 @@
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    justify-content: space-between; 
+
+ 
   }
   
   .label {
@@ -27,9 +30,22 @@
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    margin-right:250px;
   }
   
   .qrcode {
     margin-top: 20px;
   }
+  .clearButton {
+    background-color: #f44336; /* Red color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right:0px;
+  }
   
+  .clearButton:hover {
+    background-color: #d32f2f; /* Darker red color on hover */
+  }

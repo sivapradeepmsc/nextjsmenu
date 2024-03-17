@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <header>
       <nav className={`nav`}>
-        <Link href={"/"} legacyBehavior>
+        <Link href={"#"} legacyBehavior>
           <a>
             <h1 className="logo">Codedev</h1>
           </a>
