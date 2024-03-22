@@ -8,11 +8,22 @@ export const config = {
     externalResolver: true,
   },
 };
+const API_KEY = process.env.API_KEY;
 
+//twttoken
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     try {
+      const { apiKey } = req.headers;
+
       const { email, mobileNumber, vouchernumber } = req.body;
+console.log(req.headers);
+console.log(apiKey);
+console.log(process.env.API_KEY);
+
+      if (!apiKey || apiKey !== process.env.API_KEY) {
+        return res.status(401).json({ message: 'Unauthorized' });
+      }   
 
       // Validate email, mobile number, and voucher number
       if (!email || !mobileNumber) {
@@ -20,7 +31,9 @@ export default async function handler(req, res) {
       }
 
       // Check if the voucher is expired
-      const selectQuery = 'SELECT voucherstartdate, expirydate FROM voucherdetails WHERE vouchernumber = ?';
+      //const queries = require('./queries');
+
+       const selectQuery = 'SELECT voucherstartdate, expirydate FROM voucherdetails WHERE vouchernumber = ?';
       db.query(selectQuery, [vouchernumber], (error, results, fields) => {
         if (error) {
           console.error('Error checking voucher expiry:', error);
@@ -32,13 +45,14 @@ export default async function handler(req, res) {
           const currentDate = new Date();
 
           // Check if the expiry date is in the past
-        if (new Date(expirydate) < currentDate) {
-  console.log('Voucher already expired');
- // router.push('/QRCodeGenerator?expired=true&message=Voucher already expired');
-   return res.status(400).json({ message: 'Voucher already expired', expired: true });
-} else {
+    if (new Date(expirydate) < currentDate) {
+    console.log('Voucher already expired');
+    return res.status(400).json({ message: 'Voucher already expired', expired: true });
+    }
+
+ else {
             // Proceed to check if the record already exists
-            const selectRecordQuery = 'SELECT * FROM voucherrecord WHERE email = ? OR mobileNumber = ?';
+         const selectRecordQuery = 'SELECT * FROM voucherrecord WHERE email = ? OR mobileNumber = ?';
             db.query(selectRecordQuery, [email, mobileNumber], (error, results, fields) => {
               if (error) {
                 console.error('Error checking existing records:', error);

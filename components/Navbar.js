@@ -7,10 +7,8 @@ import Logo from "./Logo";
 
 
 const MENU_LIST = [
-  { text: "Home", href: "/" },
-  { text: "About Us", href: "/about" },
-  { text: "Contact", href: "/contact" },
-  { text: "QRCode", href: "/QRCodeGenerator" },
+
+  { text: "QRCode", href: "/QRCodeGenerator" }
 
 ];
 const Navbar = () => {

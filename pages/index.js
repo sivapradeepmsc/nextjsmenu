@@ -20,7 +20,7 @@ const Home = () => {
         const response = await axios.get('https://api.storyblok.com/v2/cdn/stories', {
           params: {
             version: 'draft',
-            token: '8Su8cdpWnbzcWxCU9chIfQtt',
+            token: '8Su8cdpWnbzcWxCU9chIfQt',
             starts_with: 'ecommerce' 
           },
         });

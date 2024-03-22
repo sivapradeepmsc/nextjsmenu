@@ -1,0 +1,53 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .option {
+    margin-bottom: 20px;
+  }
+  
+  .option label {
+    margin-right: 10px;
+  }
+  
+  .urlInput {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .urlInput input {
+    flex: 1;
+    margin-right: 10px;
+    padding: 5px;
+  }
+  
+  .urlInput button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .urlInput button:hover {
+    background-color: #0056b3;
+  }
+  
+  .saveButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .saveButton:hover {
+    background-color: #0056b3;
+  }
+  
